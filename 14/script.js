@@ -1,6 +1,6 @@
 const getCrafts = async() => {
     try{
-        return (await fetch("http://localhost:3001/api/crafts")).json();
+        return (await fetch("https://server-hello-world-2.onrender.com/api/crafts")).json();
     } catch(error){
         console.log("error retrieving data");
         return "";
@@ -34,9 +34,9 @@ const showCrafts = async() => {
         const tp = document.createElement("p");
         tp.innerHTML = craft.description;
         section.append(tp);
-        
+
         const img = document.createElement("img");
-        img.src = "http://localhost:3001/images/" + craft.image;
+        img.src = "https://server-hello-world-2.onrender.com/images/" + craft.image;
         section.append(img);
 
         section.onclick = () => {
