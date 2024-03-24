@@ -4,22 +4,20 @@ const app = express();
 app.use(express.static("14"));
 
 app.get("/",(req,res)=>{
-    console.log("Someone is launching our website");
     res.sendFile(__dirname + "/index.html");
 });
 
 
 app.get("/api/crafts",(req,res) => {
-    console.log("Someone is requesting our API");
     const crafts = [];
     crafts[0] = {
         "name": "Beaded JellyFish",
         "image": "bead-jellyfish.jpg",
         "description": "Create a hanging jellyfish using eggcartons and multicolored beads",
         "supplies": [
-            "string",
-            "egg cartons",
-            "beads"
+            "String",
+            "Egg cartons",
+            "Beads"
         ]
     };
     crafts[1] = {
@@ -27,9 +25,9 @@ app.get("/api/crafts",(req,res) => {
         "image": "bookmarks.jpeg",
         "description": "Create a little birdy bookmark to always remin you were you were",
         "supplies": [
-            "yellow construction paper",
-            "orange construction paper",
-            "black construction paper"
+            "Yellow construction paper",
+            "Orange construction paper",
+            "Black construction paper"
         ]
     };
     crafts[2] = {
@@ -37,10 +35,10 @@ app.get("/api/crafts",(req,res) => {
         "image": "button-flowers.jpeg",
         "description": "Create a fun bouquet of flowers with your favorite buttons",
         "supplies": [
-            "multicolored buttons",
-            "multicolored flet",
-            "green straws",
-            "ribbon"
+            "Multicolored buttons",
+            "Multicolored flet",
+            "Green straws",
+            "Ribbon"
         ]
     };
     crafts[3] = {

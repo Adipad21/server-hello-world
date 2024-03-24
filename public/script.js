@@ -29,9 +29,6 @@ const showAnimals = async() => {
         const img = document.createElement("img");
         img.src = "http://localhost:3000/" + animal.img;
         section.append(img);
-
-        
-
     });
 
 };

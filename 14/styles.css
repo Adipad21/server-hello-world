@@ -1,3 +1,61 @@
-h1 {
-    color: blueviolet;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: blanchedalmond;
+    color: #000000;
+}
+
+/* Structure */
+#content {
+    width: 99%;
+    margin: auto; /* center horizontally */
+}
+img{
+    width: 100%;
+    max-height: 500px;
+    border-radius: 5px;
+}
+#crafts-div {
+    display: flex;
+    justify-content: center;
+}
+.craft-list {
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Modal */
+.columns {
+    display: flex;
+    flex-direction: row;
+}
+.w3-container{
+    background: blanchedalmond;
+}
+#dialog section {
+    padding: 5px;
+    margin: 10px;
+}
+#dialog-details p {
+    margin: 10px 0px; 
+}
+#place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#place img {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    max-height: 100%;
+}
+#plus, #edit{
+    cursor:pointer;
+}
+#plus{
+    font-weight: bold;
+}
+h1{
+    text-align: center;
 }

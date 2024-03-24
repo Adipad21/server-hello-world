@@ -17,25 +17,63 @@ const showCrafts = async() => {
         return;
     }
 
-    //now loop through the JSON 
-    craftsJSON.forEach((craft) => {
-        const section = document.createElement("section");
-        craftsDiv.append(section);
-
-        const h3 = document.createElement("h3");
-        h3.innerHTML = craft.name;
-        section.append(h3);
-
-        const img = document.createElement("img");
-        img.src = "http://localhost:3001/" + craft.image;
-        section.append(img);
-
-        const p = document.createElement("p");
-        p.innerHTML = craft.description;
-        section.append(p);
-
+    const columns = Array.from({ length: 4 }, () => {
+        const col = document.createElement('div');
+        col.className = 'craft-column'; // Use this class for styling the columns
+        craftsDiv.appendChild(col);
+        return col;
     });
 
+    //now loop through the JSON 
+    craftsJSON.forEach((craft,index) => {
+        const section = document.createElement("section");
+        section.classList.add("craft-list");
+        craftsDiv.append(section);
+        
+        const img = document.createElement("img");
+        img.src = "http://localhost:3001/images/" + craft.image;
+        section.append(img);
+
+        section.onclick = () => {
+            document.getElementById("dialog").style.display = "block";
+            document.querySelector("#dialog-content #place img").src = img.src; 
+
+            const detailsSection = document.getElementById("dialog-details");
+            detailsSection.innerHTML = "";
+
+            const h2 = document.createElement("h2");
+            h2.innerHTML = craft.name + ` <span id="edit">&#9998;</span>`;
+            
+            const p = document.createElement("p");
+            p.innerHTML = craft.description;
+
+            const h3 = document.createElement("h3");
+            h3.innerHTML = "Supplies: ";
+
+            const ul = document.createElement("ul");
+            detailsSection.append(ul);
+
+            craft.supplies.forEach((supply)=>{
+            const li = document.createElement("li");
+            li.innerHTML = supply;
+            ul.append(li);
+            });
+
+            detailsSection.append(h2);
+            detailsSection.appendChild(p);
+            detailsSection.append(h3);
+            detailsSection.append(ul);
+        };
+
+        columns[index % 4].appendChild(section);
+
+    });
 };
 
+
 showCrafts();
+
+document.getElementById("dialog-close").onclick = () => {
+    document.getElementById("dialog").style.display = "none";
+};
+
