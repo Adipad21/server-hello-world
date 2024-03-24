@@ -30,11 +30,6 @@ const showCrafts = async() => {
         section.classList.add("craft-list");
         craftsDiv.append(section);
         
-        
-        const tp = document.createElement("p");
-        tp.innerHTML = craft.description;
-        section.append(tp);
-
         const img = document.createElement("img");
         img.src = "https://server-hello-world-2.onrender.com/images/" + craft.image;
         section.append(img);
