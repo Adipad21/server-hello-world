@@ -1,6 +1,6 @@
 const getAnimals = async() => {
     try{
-        return (await fetch("http://localhost:3000/api/animals")).json();
+        return (await fetch(__dirname + "/api/animals")).json();
     } catch(error){
         console.log("error retrieving data");
         return "";
