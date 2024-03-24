@@ -30,6 +30,11 @@ const showCrafts = async() => {
         section.classList.add("craft-list");
         craftsDiv.append(section);
         
+        
+        const tp = document.createElement("p");
+        tp.innerHTML = craft.description;
+        section.append(tp);
+        
         const img = document.createElement("img");
         img.src = "http://localhost:3001/images/" + craft.image;
         section.append(img);
