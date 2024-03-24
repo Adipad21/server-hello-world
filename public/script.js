@@ -1,6 +1,6 @@
 const getAnimals = async() => {
     try{
-        return (await fetch(__dirname + "/api/animals")).json();
+        return (await fetch("https://server-hello-world-1.onrender.com/api/animals")).json();
     } catch(error){
         console.log("error retrieving data");
         return "";
@@ -27,7 +27,7 @@ const showAnimals = async() => {
         section.append(h3);
 
         const img = document.createElement("img");
-        img.src = "http://localhost:3000/" + animal.img;
+        img.src = "https://server-hello-world-1.onrender.com/" + animal.img;
         section.append(img);
     });
 
